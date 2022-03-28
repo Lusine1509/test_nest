@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class HealthService {
-    findAll(): string {
+    checkStatus(): string {
         return 'OK Mkrtich!';
       }
 }
