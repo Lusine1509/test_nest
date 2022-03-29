@@ -9,4 +9,7 @@ export class HealthController {
   checkStatus(): string {
     return this.healthService.checkStatus();
   }
+
+  @Get("/test")
+  test(): void {}
 }
