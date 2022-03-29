@@ -11,5 +11,7 @@ export class HealthController {
   }
 
   @Get("/test")
-  test(): void {}
+  test(): string {
+    return 'sdfs';
+  }
 }
