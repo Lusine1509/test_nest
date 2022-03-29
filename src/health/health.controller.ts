@@ -10,7 +10,7 @@ export class HealthController {
     return this.healthService.checkStatus();
   }
 
-  @Get("/test")
+  @Get('/test')
   test(): string {
     return 'sdfs';
   }
