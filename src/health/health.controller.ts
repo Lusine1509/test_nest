@@ -1,12 +1,20 @@
 import { Controller, Get } from '@nestjs/common';
-import { HealthService } from './health.service';
+import { ApiTags } from '@nestjs/swagger';
+import { HealthCheckService, HealthCheck } from '@nestjs/terminus';
+
 
 @Controller('health')
 export class HealthController {
-  constructor(private readonly healthService: HealthService) {}
+  constructor(
+    private health: HealthCheckService,
+  ) { }
 
+  @ApiTags('health')
   @Get()
-  checkStatus(): string {
-    return this.healthService.checkStatus();
+  @HealthCheck()
+  check() {
+    return this.health.check([]).then(data => data.status);
   }
 }
+
+
